@@ -1,0 +1,16 @@
+[user]
+	name  = oyatu-pepo
+	email = oyatu-pepo@users.noreply.github.com
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status -sb
+	status = status -sb
+[core]
+	editor = vim
+	pager  = less
+[color]
+	ui = auto
+[push]
+	default = nothing
