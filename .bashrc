@@ -1,3 +1,8 @@
+# path
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/var/nodebrew/current/bin:$PATH
+export NODEBREW_ROOT=/usr/local/var/nodebrew
+
 # プロンプト
 PS1="\[\033[1;34m\][\u@\h \w]\$ \[\e[0;0m\]"
 
