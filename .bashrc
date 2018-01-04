@@ -3,8 +3,19 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 
-# プロンプト
-PS1="\[\033[1;34m\][\u@\h \w]\$ \[\e[0;0m\]"
+# Homebrew Completions
+BREW_SCRIPTS="$(brew --prefix)/etc/bash_completion.d"
+if [ -d "$BREW_SCRIPTS" ]; then
+    for script in $(find $BREW_SCRIPTS -type l);
+    do
+        . $script;
+    done
+fi
+
+if [ -f "$BREW_SCRIPTS/git-prompt.sh" ]; then
+    GIT_PS1_SHOWDIRTYSTATE=true
+    PS1='\[\033[01;34m\][\u@\h \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\]]\$ \[\033[00m\]'
+fi
 
 # Add colors to Terminal
 export CLICOLOR=1
