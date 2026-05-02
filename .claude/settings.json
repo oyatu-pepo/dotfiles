@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [],
+    "deny": [
+      "Read(id_rsa)",
+      "Read(id_rsa.pub)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)",
+      "Read(./build)",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot"
+    ],
+    "ask": [
+      "Bash(sudo *)",
+      "Bash(rm *)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  },
+  "enabledPlugins": {
+    "claude-code-setup@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "denyRead": [],
+      "allowRead": [
+        "~/Documents/obsidian/",
+        "~/git/"
+      ]
+    }
+  },
+  "voiceEnabled": true
+}
